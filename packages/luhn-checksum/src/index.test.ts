@@ -36,5 +36,9 @@ describe("`validate` function unit tests", () => {
     it("should not validate an empty string", () => {
       expect(validate("")).toBe(false);
     });
+
+    it("should not validate an invalid card number", () => {
+      expect(validate("123456789")).toBe(false);
+    });
   });
 });
