@@ -8,15 +8,22 @@
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",
+    "@types/node": "^20.4.2",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "ts-node": "^10.9.1",
+    "turbo": "latest",
+    "vite": "^4.4.4",
+    "vitest": "^0.33.0"
   },
   "name": "engagedmd-case-study",
   "packageManager": "npm@9.5.1",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
 }
