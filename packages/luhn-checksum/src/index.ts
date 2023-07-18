@@ -18,5 +18,5 @@ function luhnChecksum(code: string) {
 }
 
 export function validate(code: string) {
-  return luhnChecksum(code) === 0;
+  return code.length > 0 && luhnChecksum(code) === 0;
 }
