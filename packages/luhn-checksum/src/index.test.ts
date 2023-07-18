@@ -1,11 +1,9 @@
-/**
- * Test credit card numbers come from PayPal
- * https://www.paypalobjects.com/en_AU/vhelp/paypalmanager_help/credit_card_numbers.htm
- */
 import { validate } from ".";
 import { describe, test, expect } from "vitest";
 
 describe("", () => {
+  // Test credit card numbers come from PayPal
+  // https://www.paypalobjects.com/en_AU/vhelp/paypalmanager_help/credit_card_numbers.htm
   const cards = [
     ["American Express", "378282246310005"],
     ["American Express", "371449635398431"],
