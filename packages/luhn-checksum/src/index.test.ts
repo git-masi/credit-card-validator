@@ -31,4 +31,10 @@ describe("`validate` function unit tests", () => {
       });
     });
   });
+
+  describe("sad path", () => {
+    it("should not validate an empty string", () => {
+      expect(validate("")).toBe(false);
+    });
+  });
 });
