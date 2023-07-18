@@ -37,8 +37,20 @@ describe("`validate` function unit tests", () => {
       expect(validate("")).toBe(false);
     });
 
+    it("should not a string with letters", () => {
+      expect(validate("aaaaaaaa")).toBe(false);
+    });
+
     it("should not validate an invalid card number", () => {
       expect(validate("123456789")).toBe(false);
+    });
+
+    it("should not validate number less than 8 digits", () => {
+      expect(validate("4111111")).toBe(false);
+    });
+
+    it("should not validate number more than 19 digits", () => {
+      expect(validate("42424242424242424242")).toBe(false);
     });
   });
 });
