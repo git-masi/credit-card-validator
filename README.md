@@ -1,4 +1,4 @@
-# engagedmd-case-study
+# EngagedMD Case Study
 
 ## About
 
@@ -71,3 +71,7 @@ Input elements already maintain their own internal state and they have validatio
 Similar to the point on HTML input elements above, the alert can function as a modal so why not leverage that fact rather than recreate the functionality with React components?
 
 Some people don't like the built in alert. Some people want modals that fit a particular UI theme. Those are valid considerations. I always aim to give the stakeholders what they want/need so if I was asked to use a custom modal I would.
+
+### Why not use Tailwind?
+
+Tailwind is a great CSS/styling solution for applications large and small. I decided to use a more conventional component library out of convenience and personal preference.
