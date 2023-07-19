@@ -5,6 +5,18 @@ import { describe, expect, it } from "vitest";
 describe("server integration tests", () => {
   const app = createServer();
 
+  describe("happy path", () => {
+    it("should return status 200 if the card number is valid", async () => {
+      await supertest(app)
+        .post("/credit-cards/validate")
+        .send({
+          cardNumber: "4242424242424242",
+        })
+        .set("Content-Type", "application/json")
+        .expect(200);
+    });
+  });
+
   describe("sad path", () => {
     it("should return status 400 if there is no request body", async () => {
       await supertest(app).post("/credit-cards/validate").expect(400);
