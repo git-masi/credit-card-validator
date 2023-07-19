@@ -2,12 +2,11 @@ import express, { Express, Request, Response } from "express";
 import { validate } from "luhn-checksum";
 import { z } from "zod";
 
-const reqBodySchema = z.object({
-  cardNumber: z.string(),
-});
-
 export function createServer() {
   const app: Express = express();
+  const reqBodySchema = z.object({
+    cardNumber: z.string(),
+  });
 
   app.use(express.json());
 
