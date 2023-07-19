@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {
+  Container,
+  Card,
+  CardHeader,
+  CardBody,
+  Heading,
+  FormControl,
+  FormLabel,
+  Input,
+  FormHelperText,
+  Link,
+  Center,
+} from "@chakra-ui/react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container maxW="md" height="100vh">
+      <Center height="100%">
+        <Card>
+          <CardHeader>
+            <Heading size="md" textTransform="uppercase">
+              Enter a credit card number
+            </Heading>
+          </CardHeader>
+
+          <CardBody as="form">
+            <FormControl>
+              <FormLabel>Credit Card Number</FormLabel>
+
+              <Input type="text" />
+
+              <FormHelperText>
+                You can get a test card number from{" "}
+                <Link href="https://stripe.com/docs/testing" target="blank">
+                  Stripe
+                </Link>
+              </FormHelperText>
+            </FormControl>
+          </CardBody>
+        </Card>
+      </Center>
+    </Container>
+  );
 }
 
-export default App
+export default App;
