@@ -72,7 +72,11 @@ export default function CreditCardValidator() {
           setIsCardError(true);
           setErrorMessage(error.message);
         } else {
-          console.error(error);
+          console.debug(error);
+          // This type of error is not actionable by the user and we have no
+          // way of knowing if the card number is valid or not.
+          // We use the alert to indicate that something went wrong but we
+          // don't show an error on the input itself.
           alert("Sorry there was an unexpected error. Please try again later.");
         }
       } finally {
