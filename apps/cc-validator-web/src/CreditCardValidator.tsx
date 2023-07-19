@@ -52,6 +52,9 @@ export default function CreditCardValidator() {
 
     void (async () => {
       try {
+        // In the future the base URL could be moved to global state to make it
+        // easier to access from many components. We could also make it configurable
+        // by using an environment variable.
         const res = await fetch("http://localhost:8080/credit-cards/validate", {
           method: "POST",
           body: JSON.stringify({ cardNumber: value }),
