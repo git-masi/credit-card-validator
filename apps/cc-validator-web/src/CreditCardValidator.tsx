@@ -15,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { SyntheticEvent, useState } from "react";
 
+// This class is just a way to differentiate between known and
+// unknown errors.
 class ApiError extends Error {
   constructor(message: string) {
     super();
@@ -77,7 +79,9 @@ export default function CreditCardValidator() {
           // way of knowing if the card number is valid or not.
           // We use the alert to indicate that something went wrong but we
           // don't show an error on the input itself.
-          alert("Sorry there was an unexpected error. Please try again later.");
+          alert(
+            "Sorry, there was an unexpected error. Please try again later."
+          );
         }
       } finally {
         setIsLoading(false);
