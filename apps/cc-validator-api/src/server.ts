@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import { validate } from "luhn-checksum";
 import { z } from "zod";
+import cors from "cors";
 
 export function createServer() {
   const app: Express = express();
@@ -9,6 +10,7 @@ export function createServer() {
   });
 
   app.use(express.json());
+  app.use(cors());
 
   app.post("/credit-cards/validate", (req: Request, res: Response) => {
     const body = reqBodySchema.safeParse(req.body);
