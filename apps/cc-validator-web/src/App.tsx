@@ -1,7 +1,7 @@
 import { Container, Center } from "@chakra-ui/react";
 import CreditCardValidator from "./CreditCardValidator";
 
-function App() {
+export default function App() {
   return (
     <Container maxW="md" height="100vh">
       <Center height="100%">
@@ -10,5 +10,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;
