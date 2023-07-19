@@ -16,5 +16,15 @@ describe("server integration tests", () => {
         "should be an object with the signature: { cardNumber: string }"
       );
     });
+
+    it("should return a helpful error message if validation fails", async () => {
+      const response = await supertest(app)
+        .post("/credit-cards/validate")
+        .send({
+          cardNumber: "123456789",
+        })
+        .set("Content-Type", "application/json");
+      expect(response.text).contains("is invalid");
+    });
   });
 });
