@@ -12,7 +12,11 @@ export function createServer() {
     const body = reqBodySchema.safeParse(req.body);
 
     if (!body.success) {
-      res.status(400).send("Bad request");
+      res
+        .status(400)
+        .send(
+          "The request body should be an object with the signature: { cardNumber: string }"
+        );
       return;
     }
 

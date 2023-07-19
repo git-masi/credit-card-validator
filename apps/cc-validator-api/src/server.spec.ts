@@ -1,11 +1,20 @@
 import supertest from "supertest";
 import { createServer } from "./server";
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe("server integration tests", () => {
   const app = createServer();
 
-  it("should return status 400 if there is no request body", async () => {
-    await supertest(app).post("/credit-cards/validate").expect(400);
+  describe("sad path", () => {
+    it("should return status 400 if there is no request body", async () => {
+      await supertest(app).post("/credit-cards/validate").expect(400);
+    });
+
+    it("should return a helpful error message if there is no request body", async () => {
+      const response = await supertest(app).post("/credit-cards/validate");
+      expect(response.text).contains(
+        "should be an object with the signature: { cardNumber: string }"
+      );
+    });
   });
 });
