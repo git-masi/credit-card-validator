@@ -1,81 +1,73 @@
-# Turborepo starter
+# engagedmd-case-study
 
-This is an official starter Turborepo.
+## About
 
-## Using this example
+This is an implementation of the requirements in the EngagedMD case study.
 
-Run the following command:
+The project consists of a monorepo with several applications and packages that implement the required features.
+
+Keep reading to learn more.
+
+## Getting started
+
+To get started please install node modules:
 
 ```sh
-npx create-turbo@latest
+npm i
 ```
 
-## What's inside?
+From there you can start local development on all applications with:
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```sh
+npm run dev
 ```
 
-### Develop
+Or you can run all integration and unit tests with:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```sh
+npm run test
 ```
 
-### Remote Caching
+You can also navigate to any of the applications in the `/apps` folder and run the scripts in the `package.json` files found there for more fine grained control.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Tests
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+This project uses `*.test.ts` file names to indicate unit tests and `*.spec.ts` file names to indicate integration/e2e tests.
 
-```
-cd my-turborepo
-npx turbo login
-```
+That is purely a matter of personal preference.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Common questions
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### Why use a monorepo?
 
-```
-npx turbo link
-```
+A monorepo can be a good choice when you have multiple related application because it allows you to easily share configuration, scripts, and code.
 
-## Useful Links
+### Why use Express?
 
-Learn more about the power of Turborepo:
+If you are familiar with [TechEmpower Web Framework Benchmarks](https://www.techempower.com/benchmarks/) you know that Express is slower than other frameworks like Fastify (in synthetic benchmarks at least). But this code is meant to be easily read by other developers and does not focus purely on performance.
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Given that Express has been a staple of the NodeJS ecosystem for many years there is a good chance that any developer reading this will be familiar with it. So it makes sense to use Express to help others get up to speed quickly.
+
+### Why not use Redux, Zustand, or Jotai?
+
+The application doesn't have a requirement for any authorization and there aren't many features so a global state management solution seems unnecessary.
+
+### Why not use React Query, RTK Query, or SWR?
+
+For a production application you would certainly want to use something like React Query for data fetching and loading/error state management. And particularly if you're already using Redux and Redux Toolkit then RTK Query makes sense.
+
+At the very least you'd probably want some custom hooks to help make some of the code more reusable across multiple components.
+
+These are all valid points but this application only has one component that needs to fetch data and the built in browser APIs and React hooks are more than sufficient for the job.
+
+### Why not use React Hook Form? Why use browser APIs?
+
+For complicated forms React Hook Form offers a great experience. But given that there is only one input element and no requirement for handing input as the user types it seems like overkill.
+
+Input elements already maintain their own internal state and they have validation options that can be written into the HTML. We can leverage these things to reduce the need for custom React code.
+
+### Why use an alert?
+
+Similar to the point on HTML input elements above, the alert can function as a modal so why not leverage that fact rather than recreate the functionality with React components?
+
+Some people don't like the built in alert. Some people want modals that fit a particular UI theme. Those are valid considerations. I always aim to give the stakeholders what they want/need so if I was asked to use a custom modal I would.
