@@ -19,7 +19,7 @@
     "vite": "^4.4.4",
     "vitest": "^0.33.0"
   },
-  "name": "engagedmd-case-study",
+  "name": "credit-card-validator",
   "packageManager": "npm@9.5.1",
   "workspaces": [
     "apps/*",

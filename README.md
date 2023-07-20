@@ -1,8 +1,8 @@
-# EngagedMD Case Study
+# Credit Card Validator
 
 ## About
 
-This is an implementation of the requirements in the EngagedMD case study. The project is organized as a monorepo with several apps and internal packages.
+This project implements a simple credit card validator. It is organized as a monorepo with several apps and internal packages.
 
 In the `/apps` folder you will find:
 
