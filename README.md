@@ -10,23 +10,47 @@ Keep reading to learn more.
 
 ## Getting started
 
+### Install node modules
+
 To get started please install node modules:
 
-```sh
+```
 npm i
 ```
 
-From there you can start local development on all applications with:
+### Local development
 
-```sh
+Once you have installed node modules you can start local development on all applications with:
+
+```
 npm run dev
 ```
 
-Or you can run all integration and unit tests with:
+### Unit and Integration tests
 
-```sh
+You can run all unit and integration tests with:
+
+```
 npm run test
 ```
+
+### E2E tests
+
+Running end-to-end tests requires both the React app and the API to be running.
+
+First start the dev server for both:
+
+```
+npm run dev
+```
+
+Then open a new terminal window and run the tests:
+
+```
+npm run test:e2e
+```
+
+### App scripts
 
 You can also navigate to any of the applications in the `/apps` folder and run the scripts in the `package.json` files found there for more fine grained control.
 
