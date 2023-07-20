@@ -2,11 +2,15 @@
 
 ## About
 
-This is an implementation of the requirements in the EngagedMD case study.
+This is an implementation of the requirements in the EngagedMD case study. The project is organized as a monorepo with several apps and internal packages.
 
-The project consists of a monorepo with several applications and packages that implement the required features.
+In the `/apps` folder you will find:
 
-Keep reading to learn more.
+- `cc-validator-web` a React application and primary UI
+- `cc-validator-api` an Express server and primary API
+- `cc-validator-e2e` a set of end-to-end tests
+
+The API consumes the internal `luhn-checksum` package which can be found in the `packages` folder.
 
 ## Getting started
 
