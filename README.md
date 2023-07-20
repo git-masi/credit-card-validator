@@ -16,6 +16,8 @@ The API consumes the internal `luhn-checksum` package which can be found in the 
 
 ### Install node modules
 
+This project uses a .nvmrc file to indicate the required version of NodeJS. If you use nvm you can run `nvm use` to load the correct version of NodeJS.
+
 To get started please install node modules:
 
 ```
