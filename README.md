@@ -30,6 +30,12 @@ Once you have installed node modules you can start local development on all appl
 npm run dev
 ```
 
+## Tests
+
+This project uses `*.test.ts` file names to indicate unit tests and `*.spec.ts` file names to indicate integration/e2e tests.
+
+That is purely a matter of personal preference.
+
 ### Unit and Integration tests
 
 You can run all unit and integration tests with:
@@ -54,15 +60,9 @@ Then open a new terminal window and run the tests:
 npm run test:e2e
 ```
 
-### App scripts
+## App scripts
 
-You can also navigate to any of the applications in the `/apps` folder and run the scripts in the `package.json` files found there for more fine grained control.
-
-## Tests
-
-This project uses `*.test.ts` file names to indicate unit tests and `*.spec.ts` file names to indicate integration/e2e tests.
-
-That is purely a matter of personal preference.
+You can navigate to any of the applications in the `/apps` folder and run the scripts in the `package.json` files found there for more fine grained control.
 
 ## Common questions
 
