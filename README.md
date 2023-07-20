@@ -48,6 +48,10 @@ If you are familiar with [TechEmpower Web Framework Benchmarks](https://www.tech
 
 Given that Express has been a staple of the NodeJS ecosystem for many years there is a good chance that any developer reading this will be familiar with it. So it makes sense to use Express to help others get up to speed quickly.
 
+### Why not use an npm package for Luhn checksum?
+
+Often using a _well tested_ external library is preferable to writing everything yourself. The Luhn checksum algorithm is simple enough, and our use case is simple enough, that writing it by hand is a viable option. Plus we can demonstrate some interesting monorepo and testing features by doing so.
+
 ### Why not use Redux, Zustand, or Jotai?
 
 The application doesn't have a requirement for any authorization and there aren't many features so a global state management solution seems unnecessary.
