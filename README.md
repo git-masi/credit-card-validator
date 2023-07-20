@@ -30,6 +30,8 @@ Once you have installed node modules you can start local development on all appl
 npm run dev
 ```
 
+By default the React app will run at `http://localhost:5173` and the API will run at `http://localhost:8080`
+
 ## Tests
 
 This project uses `*.test.ts` file names to indicate unit tests and `*.spec.ts` file names to indicate integration/e2e tests.
